@@ -675,6 +675,70 @@
         line-height: 1.6;
       }
 
+      /* ── AI EXPERIMENT ── */
+      .ai-experiment {
+        margin-top: 48px;
+        border-top: 1px solid var(--rule);
+        padding-top: 36px;
+      }
+      .ai-exp-eyebrow {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.6rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--blue);
+        margin-bottom: 14px;
+      }
+      .ai-exp-title {
+        font-family: "Outfit", sans-serif;
+        font-weight: 600;
+        font-size: 1rem;
+        color: var(--ink);
+        margin-bottom: 10px;
+        letter-spacing: -0.01em;
+      }
+      .ai-exp-desc {
+        font-size: 0.88rem;
+        color: var(--muted);
+        line-height: 1.8;
+        max-width: 700px;
+        margin-bottom: 18px;
+      }
+      .ai-exp-results {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 18px;
+      }
+      .ai-exp-chip {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.68rem;
+        background: var(--blue-bg);
+        border: 1px solid var(--blue-bd);
+        color: var(--blue);
+        border-radius: 4px;
+        padding: 4px 10px;
+        letter-spacing: 0.03em;
+      }
+      .ai-exp-link {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--blue);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border-bottom: 1px solid var(--blue-bd);
+        padding-bottom: 1px;
+        transition: border-color 0.2s, color 0.2s;
+      }
+      .ai-exp-link:hover {
+        color: var(--ink);
+        border-color: var(--ink);
+      }
+
       /* ── SELECTED PROJECTS ── */
       .work-grid {
         display: grid;
@@ -1641,6 +1705,27 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="ai-experiment r" style="transition-delay: 0.18s">
+        <div class="ai-exp-eyebrow">A few experiments of mine in this</div>
+        <div class="ai-exp-title">Schema-Aware Prompting for Text-to-SQL — Local LLM Study</div>
+        <p class="ai-exp-desc">
+          Ran an empirical study evaluating three prompting strategies for NL-to-SQL translation on the
+          Chinook database using <strong style="color:var(--ink2);font-weight:500">gemma3:4b via Ollama</strong> — fully local, no API.
+          The result: schema injection alone jumped execution accuracy from <strong style="color:var(--ink2);font-weight:500">0% → 92%</strong>,
+          and an error-driven retry loop closed the remaining gap to <strong style="color:var(--ink2);font-weight:500">100%</strong>
+          across 50 structured queries. If you want some info about this, it's all here.
+        </p>
+        <div class="ai-exp-results">
+          <span class="ai-exp-chip">Baseline · 0%</span>
+          <span class="ai-exp-chip">Schema-Aware · 92%</span>
+          <span class="ai-exp-chip">+ Retry · 100%</span>
+          <span class="ai-exp-chip">gemma3:4b · Ollama · SQLite</span>
+        </div>
+        <a href="https://github.com/Retheshgoud/text-to-sql-research" target="_blank" class="ai-exp-link">
+          View the research on GitHub &rarr;
+        </a>
       </div>
     </section>
 
